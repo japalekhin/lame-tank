@@ -8,5 +8,5 @@ class LameTank extends Game {
 
   void update(double t) {}
 
-  void resize(Size size) => screenSize;
+  void resize(Size size) => screenSize = size;
 }
