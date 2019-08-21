@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:lame_tank/lame-tank.dart';
 
 class GameController extends StatelessWidget {
+  final LameTank game;
+
+  const GameController({Key key, @required this.game}) : super(key: key);
+
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

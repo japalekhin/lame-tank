@@ -13,13 +13,17 @@ void main() async {
   // disable all UI overlays (show fullscreen)
   await SystemChrome.setEnabledSystemUIOverlays([]);
 
+  // initialize a game first
+  final LameTank game = LameTank();
+
+  // run the app
   runApp(
     Directionality(
       textDirection: TextDirection.ltr,
       child: Stack(
         children: <Widget>[
-          LameTank().widget,
-          GameController(),
+          game.widget,
+          GameController(game: game),
         ],
       ),
     ),
