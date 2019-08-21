@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lame_tank/game-controller.dart';
 import 'package:lame_tank/lame-tank.dart';
 
 void main() async {
@@ -12,5 +13,15 @@ void main() async {
   // disable all UI overlays (show fullscreen)
   await SystemChrome.setEnabledSystemUIOverlays([]);
 
-  runApp(LameTank().widget);
+  runApp(
+    Directionality(
+      textDirection: TextDirection.ltr,
+      child: Stack(
+        children: <Widget>[
+          LameTank().widget,
+          GameController(),
+        ],
+      ),
+    ),
+  );
 }
