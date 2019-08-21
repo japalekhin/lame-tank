@@ -26,6 +26,8 @@ class GameController extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     SizedBox(width: 50),
+
+                    // up button
                     GestureDetector(
                       child: Container(
                         height: 48,
@@ -35,14 +37,16 @@ class GameController extends StatelessWidget {
                           child: Icon(Icons.keyboard_arrow_up, size: 32),
                         ),
                       ),
-                      onPanDown: (DragDownDetails d) {},
-                      onPanEnd: (DragEndDetails d) {},
+                      onPanDown: game.onUpDragStart,
+                      onPanEnd: game.onUpDragEnd,
                     ),
+
                     SizedBox(width: 50),
                   ],
                 ),
                 Row(
                   children: <Widget>[
+                    // left button
                     GestureDetector(
                       child: Container(
                         height: 48,
@@ -52,10 +56,13 @@ class GameController extends StatelessWidget {
                           child: Icon(Icons.keyboard_arrow_left, size: 32),
                         ),
                       ),
-                      onPanDown: (DragDownDetails d) {},
-                      onPanEnd: (DragEndDetails d) {},
+                      onPanDown: game.onLeftDragStart,
+                      onPanEnd: game.onLeftDragEnd,
                     ),
+
                     SizedBox(width: 50),
+
+                    // right button
                     GestureDetector(
                       child: Container(
                         height: 48,
@@ -65,14 +72,16 @@ class GameController extends StatelessWidget {
                           child: Icon(Icons.keyboard_arrow_right, size: 32),
                         ),
                       ),
-                      onPanDown: (DragDownDetails d) {},
-                      onPanEnd: (DragEndDetails d) {},
+                      onPanDown: game.onRightDragStart,
+                      onPanEnd: game.onRightDragEnd,
                     ),
                   ],
                 ),
                 Row(
                   children: <Widget>[
                     SizedBox(width: 50),
+
+                    // down button
                     GestureDetector(
                       child: Container(
                         height: 48,
@@ -82,9 +91,10 @@ class GameController extends StatelessWidget {
                           child: Icon(Icons.keyboard_arrow_down, size: 32),
                         ),
                       ),
-                      onPanDown: (DragDownDetails d) {},
-                      onPanEnd: (DragEndDetails d) {},
+                      onPanDown: game.onDownDragStart,
+                      onPanEnd: game.onDownDragEnd,
                     ),
+
                     SizedBox(width: 50),
                   ],
                 ),
@@ -105,7 +115,7 @@ class GameController extends StatelessWidget {
                     child: Icon(Icons.new_releases, size: 48),
                   ),
                 ),
-                onTap: () {},
+                onTap: game.onFireTap,
               ),
             ),
 

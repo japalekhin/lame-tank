@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flame/game.dart';
+import 'package:flutter/gestures.dart';
 import 'package:lame_tank/components/bullet.dart';
 import 'package:lame_tank/components/tank.dart';
 
@@ -78,4 +79,22 @@ class LameTank extends Game {
       ),
     );
   }
+
+  void onUpDragStart(DragDownDetails d) {}
+
+  void onUpDragEnd(DragEndDetails d) {}
+
+  void onRightDragStart(DragDownDetails d) {}
+
+  void onRightDragEnd(DragEndDetails d) {}
+
+  void onDownDragStart(DragDownDetails d) {}
+
+  void onDownDragEnd(DragEndDetails d) {}
+
+  void onLeftDragStart(DragDownDetails d) {}
+
+  void onLeftDragEnd(DragEndDetails d) {}
+
+  void onFireTap() {}
 }
