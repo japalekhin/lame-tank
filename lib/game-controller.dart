@@ -1,0 +1,117 @@
+import 'package:flutter/material.dart';
+
+class GameController extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        // big empty space
+        Spacer(),
+
+        // the bottom part
+        Row(
+          children: <Widget>[
+            // spacer to the left of directional buttons
+            SizedBox(width: 48),
+
+            // the directional buttons
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    SizedBox(width: 50),
+                    GestureDetector(
+                      child: Container(
+                        height: 48,
+                        width: 48,
+                        color: Color(0xffffffff),
+                        child: Center(
+                          child: Icon(Icons.keyboard_arrow_up, size: 32),
+                        ),
+                      ),
+                      onPanDown: (DragDownDetails d) {},
+                      onPanEnd: (DragEndDetails d) {},
+                    ),
+                    SizedBox(width: 50),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    GestureDetector(
+                      child: Container(
+                        height: 48,
+                        width: 48,
+                        color: Color(0xffffffff),
+                        child: Center(
+                          child: Icon(Icons.keyboard_arrow_left, size: 32),
+                        ),
+                      ),
+                      onPanDown: (DragDownDetails d) {},
+                      onPanEnd: (DragEndDetails d) {},
+                    ),
+                    SizedBox(width: 50),
+                    GestureDetector(
+                      child: Container(
+                        height: 48,
+                        width: 48,
+                        color: Color(0xffffffff),
+                        child: Center(
+                          child: Icon(Icons.keyboard_arrow_right, size: 32),
+                        ),
+                      ),
+                      onPanDown: (DragDownDetails d) {},
+                      onPanEnd: (DragEndDetails d) {},
+                    ),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    SizedBox(width: 50),
+                    GestureDetector(
+                      child: Container(
+                        height: 48,
+                        width: 48,
+                        color: Color(0xffffffff),
+                        child: Center(
+                          child: Icon(Icons.keyboard_arrow_down, size: 32),
+                        ),
+                      ),
+                      onPanDown: (DragDownDetails d) {},
+                      onPanEnd: (DragEndDetails d) {},
+                    ),
+                    SizedBox(width: 50),
+                  ],
+                ),
+              ],
+            ),
+
+            // space between directional buttons and fire button
+            Spacer(),
+
+            // the fire button
+            Center(
+              child: GestureDetector(
+                child: Container(
+                  height: 64,
+                  width: 64,
+                  color: Color(0xffffffff),
+                  child: Center(
+                    child: Icon(Icons.new_releases, size: 48),
+                  ),
+                ),
+                onTap: () {},
+              ),
+            ),
+
+            // right of the fire button
+            SizedBox(width: 48),
+          ],
+        ),
+
+        // bottom spacer
+        SizedBox(height: 18),
+      ],
+    );
+  }
+}
