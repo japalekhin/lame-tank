@@ -44,7 +44,7 @@ class LameTank extends Game {
       return;
     }
 
-// make tank move
+    // make tank move
     if (lastMove == 'x') {
       if (xMovement < 0) {
         tank.direction = Direction.left;
@@ -92,7 +92,6 @@ class LameTank extends Game {
 
     if (bullets == null) {
       bullets = List<Bullet>();
-      shoot();
     }
   }
 
