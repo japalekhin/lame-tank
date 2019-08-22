@@ -3,11 +3,15 @@ import 'package:flame/game.dart';
 import 'package:flutter/gestures.dart';
 import 'package:lame_tank/components/bullet.dart';
 import 'package:lame_tank/components/tank.dart';
+import 'package:lame_tank/helpers/directions.dart';
 
 class LameTank extends Game {
   Size screenSize;
   Tank tank;
   List<Bullet> bullets;
+  String lastMove = '';
+  double yMovement = 0;
+  double xMovement = 0;
 
   void render(Canvas c) {
     // just end execution if there's no screenSize
@@ -38,6 +42,28 @@ class LameTank extends Game {
   void update(double t) {
     if (screenSize == null) {
       return;
+    }
+
+// make tank move
+    if (lastMove == 'x') {
+      if (xMovement < 0) {
+        tank.direction = Direction.left;
+        tank.position = tank.position.translate(-100 * t, 0);
+      }
+      if (xMovement > 0) {
+        tank.direction = Direction.right;
+        tank.position = tank.position.translate(100 * t, 0);
+      }
+    }
+    if (lastMove == 'y') {
+      if (yMovement < 0) {
+        tank.direction = Direction.up;
+        tank.position = tank.position.translate(0, -100 * t);
+      }
+      if (yMovement > 0) {
+        tank.direction = Direction.down;
+        tank.position = tank.position.translate(0, 100 * t);
+      }
     }
 
     // make bullets fly
@@ -80,21 +106,43 @@ class LameTank extends Game {
     );
   }
 
-  void onUpDragStart(DragDownDetails d) {}
+  void onUpDragStart(DragDownDetails d) {
+    yMovement += -1;
+    lastMove = 'y';
+  }
 
-  void onUpDragEnd(DragEndDetails d) {}
+  void onUpDragEnd(DragEndDetails d) {
+    yMovement += 1;
+  }
 
-  void onRightDragStart(DragDownDetails d) {}
+  void onRightDragStart(DragDownDetails d) {
+    xMovement += 1;
+    lastMove = 'x';
+  }
 
-  void onRightDragEnd(DragEndDetails d) {}
+  void onRightDragEnd(DragEndDetails d) {
+    xMovement += -1;
+  }
 
-  void onDownDragStart(DragDownDetails d) {}
+  void onDownDragStart(DragDownDetails d) {
+    yMovement += 1;
+    lastMove = 'y';
+  }
 
-  void onDownDragEnd(DragEndDetails d) {}
+  void onDownDragEnd(DragEndDetails d) {
+    yMovement += -1;
+  }
 
-  void onLeftDragStart(DragDownDetails d) {}
+  void onLeftDragStart(DragDownDetails d) {
+    xMovement += -1;
+    lastMove = 'x';
+  }
 
-  void onLeftDragEnd(DragEndDetails d) {}
+  void onLeftDragEnd(DragEndDetails d) {
+    xMovement += 1;
+  }
 
-  void onFireTap() {}
+  void onFireTap() {
+    shoot();
+  }
 }
