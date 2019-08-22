@@ -1,16 +1,19 @@
-# lame_tank
+# Lame Tank
 
-A new Flutter project.
+![](lame-tank.jpg)
 
-## Getting Started
+Not a real game. Just a demo project/repo for my tutorial on on-onscreen game controller for Flame.
 
-This project is a starting point for a Flutter application.
+Tutorial: https://jap.alekhin.io/onscreen-gamepad-controller-flame
 
-A few resources to get you started if this is your first Flutter project:
+**Feel free to build upon it!**
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+*(or use it to learn game development and make your own game)*
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+If you do build upon this project, crediting back to this repo or [my website](https://jap.alekhin.io), would be appreciated. **Although it's not required.** What's more important though is to send me a link to what you made. It makes me happy when people learn and create something out of my projects and tutorials.
+
+## Support
+
+Please [**support my work**](https://jap.alekhin.io/support) by becoming a patron on Patreon.
+
+[![](https://jap.alekhin.io/wp-content/uploads/2019/03/become-patron-button.png)](https://www.patreon.com/bePatron?u=6507717)
