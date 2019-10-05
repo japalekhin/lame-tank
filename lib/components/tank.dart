@@ -19,7 +19,7 @@ class Tank {
     c.save();
     c.translate(position.dx, position.dy);
 
-// rotate the canvas
+    // rotate the canvas
     switch (direction) {
       case Direction.up:
         c.rotate(0);
